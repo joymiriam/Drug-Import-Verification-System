@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manufacturer Registration</title>
+    <script src="validation.js" defer></script>
+<style>
+    /* Apply default styling to all elements */
+    * {
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        box-sizing: border-box; /* Include padding and border in element's total width/height */
+        font-family: Arial, sans-serif; /* Set default font */
+    }
+
+    /* Style the body element */
+    body {
+        background-image: url('images/gradient.jpg'); /* Set background image */
+        background-size: 100%; /* Stretch background to full width */
+        background-position: center; /* Center the background */
+        background-repeat: no-repeat; /* Prevent repeating the background */
+        background-attachment: fixed; /* Keep background fixed when scrolling */
+        display: flex; /* Use flexbox layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: flex-start; /* Align content to top */
+        min-height: 100vh; /* Minimum height of full screen */
+        padding-top: 40px; /* Add space at the top */
+        overflow-y: auto; /* Allow vertical scrolling */
+    }
+
+    /* Container for the form */
+    .form-container {
+        background: rgba(255, 255, 255, 0.9); /* White background with transparency */
+        opacity: 0.9; /* Make the container slightly transparent */
+        padding: 30px; /* Add space inside the box */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        width: 850px; /* Set width of form */
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Style for main heading */
+    h1 {
+        margin-bottom: 20px; /* Add space below heading */
+        font-size: 24px; /* Set font size */
+        color: #5a3e8b; /* Set text color */
+    }
+
+    /* Style for form labels */
+    label {
+        display: block; /* Force each label onto its own line */
+        text-align: left; /* Align label text to the left */
+        margin: 10px 0 5px; /* Top and bottom spacing */
+        font-weight: bold; /* Make text bold */
+        color: #333; /* Dark grey color */
+    }
+
+    /* Style for input fields and select dropdowns */
+    input, select {
+        width: 100%; /* Full width */
+        padding: 10px; /* Inner spacing */
+        margin-bottom: 15px; /* Space below each input */
+        border: 1px solid #ccc; /* Light grey border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Set font size */
+    }
+
+    /* Style for primary buttons */
+    button {
+        background-color: #7551b2; /* Purple background */
+        color: white; /* White text */
+        border: none; /* No border */
+        padding: 12px; /* Padding inside the button */
+        font-size: 16px; /* Font size */
+        border-radius: 5px; /* Rounded edges */
+        transition: 0.3s ease; /* Smooth hover transition */
+        cursor: pointer; /* Pointer cursor on hover */
+        width: 100%; /* Full width */
+    }
+
+    /* Hover effect for primary button */
+    button:hover {
+        background-color: #583f84; /* Darker purple on hover */
+    }
+
+    /* Style for secondary button */
+    button.secondary {
+        background-color: #ccc; /* Light grey background */
+        color: #000; /* Black text */
+        margin-top: 10px; /* Space above the button */
+    }
+
+    /* Hover effect for secondary button */
+    button.secondary:hover {
+        background-color: #aaa; /* Darker grey on hover */
+    }
+</style>
+
+</head>
+<body style="background-color: lavender;">
+    <div class="form-container">
+        <h1 style="font-family: Verdana;">Manufacturer Registration Form</h1>
+        <form id="manufacturerForm" action="manufacturer.php" method="post" enctype="multipart/form-data">
+            <label for="name">Manufacturer Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+            
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="gmp_certNo">GMP Certificate Number:</label>
+            <input type="text" id="gmp_certNo" name="gmp_certNo">
+
+            <label for="doi">Date of Inspection:</label>
+            <input type="text" id="doi" name="doi" >
+
+            <label>GMP Certificate Verification:</label>
+            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                <label style="display: flex; align-items: center; gap: 5px;">
+                    <input type="radio" id="gmp_yes" name="gmp_cert_verif" value="yes">
+                    Yes
+                </label>
+            
+                <label style="display: flex; align-items: center; gap: 5px;">
+                    <input type="radio" id="gmp_no" name="gmp_cert_verif" value="no">
+                    No
+                </label>
+            </div>
+
+            <label for="gmp_cert">Upload GMP Certificate :</label>
+            <input type="file" id="gmp_cert" name="gmp_cert" accept=".pdf">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="ppb_dashboard.php" method="get">
+            <button class="secondary">Back to Dashboard</button>
+        </form>
+    </div>
+</body>
+</html>

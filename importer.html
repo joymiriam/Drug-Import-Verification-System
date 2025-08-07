@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Importer Registration</title>
+    <script src="validation.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    /* Reset default margin and padding, apply consistent box sizing and font across all elements */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Style for the entire page body */
+    body {
+        background-image: url('images/gradient.jpg'); /* Set background image */
+        background-size: 100%; /* Stretch background to fill the width */
+        background-position: center; /* Center the background */
+        background-repeat: no-repeat; /* Prevent image repetition */
+        background-attachment: fixed; /* Fix background while scrolling */
+        min-height: 100vh; /* Ensure body takes full viewport height */
+    }
+
+    /* Style for the top header section */
+    header {
+        background-color: rgba(90, 62, 139, 0.9); /* Semi-transparent purple background */
+        color: white; /* White text */
+        padding: 20px; /* Space inside header */
+        text-align: center; /* Center the header text */
+        position: relative; /* Allows absolute positioning of elements inside */
+        z-index: 10; /* Ensure it sits above other elements */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slight shadow below header */
+    }
+
+    /* Style for the 'Back' button inside the header */
+    .btn-back {
+        position: absolute; /* Position it relative to the header */
+        right: 20px; /* Push it from the right */
+        top: 20px; /* Push it from the top */
+        background-color: #555; /* Dark grey background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Space inside the button */
+        border-radius: 5px; /* Slightly rounded corners */
+        text-decoration: none; /* Remove underline */
+    }
+
+    /* Container that wraps the form */
+    .form-container {
+        background: rgba(255, 255, 255, 0.95); /* Almost opaque white background */
+        margin: 60px auto; /* Center the container with top margin */
+        padding: 30px; /* Space inside the container */
+        border-radius: 10px; /* Rounded edges */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+        width: 850px; /* Fixed width */
+        text-align: left; /* Align content to the left */
+    }
+
+    /* Main heading style */
+    h1 {
+        font-family: Verdana; /* Change font */
+        color: #f0f0f0; /* Very light gray text */
+        margin-bottom: 20px; /* Space below heading */
+    }
+
+    /* Subheading style */
+    h2 {
+        font-family: Verdana; /* Consistent font with h1 */
+        color: #5a3e8b; /* Purple text */
+        margin-bottom: 20px; /* Space below subheading */
+    }
+
+    /* Label style for form fields */
+    label {
+        display: block; /* Each label takes full line */
+        margin: 10px 0 5px; /* Space above and below label */
+        font-weight: bold; /* Bold text */
+        color: #333; /* Dark gray text */
+    }
+
+    /* Input fields style */
+    input {
+        width: 100%; /* Full width input */
+        padding: 10px; /* Inner padding */
+        margin-bottom: 15px; /* Space below input */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 5px; /* Slightly rounded edges */
+        font-size: 16px; /* Medium font size */
+    }
+
+    /* Button style */
+    button {
+        background-color: #7551b2; /* Purple background */
+        color: white; /* White text */
+        border: none; /* No border */
+        padding: 12px; /* Inner spacing */
+        font-size: 16px; /* Font size */
+        border-radius: 5px; /* Rounded edges */
+        transition: 0.3s ease; /* Smooth hover transition */
+        width: 100%; /* Full width button */
+    }
+
+    /* Hover effect for the button */
+    button:hover {
+        background-color: #583f84; /* Darker purple on hover */
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Importer Registration Form</h1>
+        <a href="importer_dashboard.php" class="btn-back">Back to Dashboard</a>
+    </header>
+    <div class="form-container">
+        <h2 style="font-family: Verdana;">Importer Registration Form</h2>
+        <form id="importerForm" action="importer.php" method="post">
+            <label for="name">Importer Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+
+            <label for="license_no">License Number:</label>
+            <input type="text" id="license_no" name="license_no">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="registration_no">Registration Number:</label>
+            <input type="text" id="registration_no" name="registration_no">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

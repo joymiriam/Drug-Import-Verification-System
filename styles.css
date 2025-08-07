@@ -1,0 +1,500 @@
+/* Apply to all elements on the page */
+* {
+    margin: 0; /* Remove default margin from all elements */
+    padding: 0; /* Remove default padding from all elements */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    font-family: Arial, sans-serif; /* Set a clean, sans-serif font as the default */
+}
+
+/* Style for the entire body of the page */
+body {
+    position: relative; /* Allows absolutely positioned elements (like body::before) to be placed relative to the body */
+    background: url("images/pills.jpg") no-repeat center center fixed; /* Set background image, centered and fixed in place */
+    background-size: cover; /* Make the background image cover the entire page */
+}
+
+/* Add a dark transparent layer over the background image */
+body::before {
+    content: ""; /* Pseudo-element must have content; empty string is fine */
+    position: absolute; /* Position relative to the nearest positioned ancestor  */
+    top: 0; /* Start at the top of the body */
+    left: 0; /* Start at the left edge of the body */
+    width: 100%; /* Cover full width of the body */
+    height: 100%; /* Cover full height of the body */
+    opacity: 0.5; /* Make the overlay semi-transparent */
+    z-index: -1; /* Place behind other content so it acts like a darkened overlay */
+}
+
+/* Style the top header bar */
+header {
+    background: linear-gradient(to right, #9474af, #e5d4ef); /* Gradient from purple to light lavender */
+    padding: 15px 30px; /* Space inside the header: 15px top/bottom, 30px left/right */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow below header */
+    position: fixed; /* Keep the header fixed at the top even when scrolling */
+    width: 100%; /* Stretch header across full width of the screen */
+    height: 60px; /* Set a fixed height for the header */
+    top: 0; /* Position at the very top */
+    left: 0; /* Align with the left edge */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically center the content inside the header */
+    z-index: 1000; /* Make sure the header stays above most other elements */
+}
+
+/* Style for the logo text */
+.logo {
+    font-size: 24px; /* Large font for the logo */
+    font-weight: bold; /* Make the logo text bold */
+    color: white; /* White text color */
+}
+
+/* Style for the navigation container */
+.navbar {
+    display: flex; /* Use Flexbox to lay out nav items horizontally */
+    gap: 20px; /* Add space (20px) between each navigation item */
+}
+
+/* Navigation links container */
+.nav-links {
+    list-style: none; /* Remove default bullet points from the list */
+    display: flex; /* Display list items in a row */
+    gap: 20px; /* Add 20px space between each link */
+    padding: 0; /* Remove default padding */
+}
+
+/* Each list item inside .nav-links */
+.nav-links li {
+    display: inline; /* Display each list item inline (horizontally) */
+}
+
+/* Style for anchor links inside the navigation */
+.nav-links a {
+    text-decoration: none; /* Remove the underline from the links */
+    color: white; /* Make the text white */
+    font-weight: bold; /* Make the text bold */
+    padding: 8px 12px; /* Add space around the text */
+}
+
+/* Style when hovering over a navigation link */
+.nav-links a:hover {
+    color: black; /* Change text color to black on hover */
+}
+
+/* Container for login/signup buttons (authentication links) */
+.auth-links {
+    display: flex; /* Display auth links in a row */
+    gap: 10px; /* Add 10px gap between them */
+}
+
+/* Style for the actual login/signup links */
+.auth-links a {
+    text-decoration: none; /* Remove underlines from the links */
+    background-color: darkgray; /* Set a dark gray background */
+    color: black; /* Make the text black */
+    padding: 8px 15px; /* Add padding inside the button */
+    border-radius: 5px; /* Round the corners slightly */
+    font-weight: bold; /* Make the button text bold */
+}
+
+/* Style when hovering over auth links */
+.auth-links a:hover {
+    background-color: gray; /* Change background color to a lighter gray on hover */
+}
+
+/* A section with a fixed background image (used for parallax effect) */
+.fixed-bg {
+    background-image: url("images/pills.jpg"); /* Set background image */
+    min-height: 500px; /* Ensure the section is at least 500px tall */
+    background-attachment: fixed; /* Fix background in place (parallax effect) */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Don't repeat the image */
+    background-size: cover; /* Make the image cover the entire container */
+}
+
+/* Section styling for banned drugs list */
+#banned-drugs {
+    margin: 80px 20px 40px 20px; /* Top 80px, bottom 40px, left/right 20px spacing */
+    padding: 5px 30px; /* Add space inside the box */
+    background-color: white; /* Set background to white */
+    border-radius: 10px; /* Round the corners of the box */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: auto; /* Width determined by content or parent */
+    max-width: none; /* No limit on maximum width */
+    opacity: 0.95; /* Slight transparency */
+    z-index: 2; /* Ensure it appears above background layers */
+    position: relative; /* Necessary for layering or child absolute positioning */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Style for main heading inside the #banned-drugs section */
+#banned-drugs h2 {
+    margin-top: 0; /* Remove top margin to align with container's top */
+    font-size: 32px; /* Make the heading large */
+    color: black;  /* Use black color for visibility */
+    margin-bottom: 20px; /* Space below the heading */
+    border-left: 6px solid #e5d4ef; /* Add a colored left border for emphasis */
+    padding-left: 12px; /* Space between text and left border */
+    text-transform: uppercase; /* Convert text to uppercase letters */
+    letter-spacing: 1px; /* Add spacing between letters for readability */
+}
+
+/* Subheadings inside the #banned-drugs section */
+#banned-drugs h3 {
+    font-size: 22px; /* Slightly smaller than h2 */
+    color: #6a4d7e; /* A soft purple color */
+    margin-top: 20px; /* Space above the subheading */
+    margin-bottom: 10px; /* Space below the subheading */
+}
+
+/* Paragraph text inside the #banned-drugs section */
+#banned-drugs p {
+    font-size: 16px; /* Standard paragraph font size */
+    line-height: 1.6; /* Space between lines for readability */
+    color: #333; /* Dark gray text */
+    margin: 10px 0; /* Vertical spacing around paragraph */
+}
+
+/* Unordered list in the #banned-drugs section */
+#banned-drugs ul {
+    list-style-type: disc; /* Use bullet points */
+    padding-left: 40px; /* Indent from the left */
+    margin-bottom: 20px; /* Space below the list */
+}
+
+/* Each list item under #banned-drugs */
+#banned-drugs ul li {
+    font-size: 16px; /* Standard text size */
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Style for links inside the #banned-drugs section (like "Read more" or "Download") */
+#banned-drugs a {
+    display: inline-block; /* Allow padding and block-like behavior while staying inline */
+    background-color: #9474af; /* Purple background */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 18px; /* Add space inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text for emphasis */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    margin-top: 15px; /* Space above the button */
+}
+
+/* Change button background on hover */
+#banned-drugs a:hover {
+    background-color: #6d4f8d; /* Darker purple on hover */
+}
+
+/* A banner section possibly used for page headings or announcements */
+.banner {
+    height: auto; /* Height adjusts to content */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: left; /* Align text to the left */
+    color: black; /* Black text color */
+    padding: 10px; /* Space inside the banner */
+    opacity: 0.9; /* Slight transparency */
+    position: relative; /* Allows positioning using top/left */
+    top: 60px;  /* Push down to account for fixed header height */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the page */
+    z-index: 10; /* Place above most elements but below the fixed header */
+}
+
+/* Creates a semi-transparent overlay at the top half of the banner */
+.banner::before {
+    content: ""; /* Required for pseudo-element to render */
+    position: absolute; /* Positioned relative to .banner */
+    top: 0; /* Align to top of .banner */
+    left: 0; /* Align to left of .banner */
+    width: 100%; /* Full width of the banner */
+    height: 50%; /* Cover top half of the banner */
+    z-index: 1; /* Layer beneath the content but above background */
+}
+
+/* Wrapper for the main banner text */
+.banner-content {
+    position: relative; /* Allows layering above ::before */
+    z-index: 2; /* Ensures it appears above the ::before overlay */
+    width: 100%; /* Full width of banner */
+    height: 40%; /* Occupies 40% of banner height */
+    padding: 15px; /* Inner spacing around the content */
+    background-color: rgb(255, 255, 255); /* White background */
+}
+
+/* Main heading inside the banner */
+.banner-content h1 {
+    font-size: 36px; /* Large font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below the heading */
+    text-transform: uppercase; /* Convert all letters to uppercase */
+    letter-spacing: 2px; /* Increase space between characters */
+}
+
+/* Paragraph text inside the banner */
+.banner-content p {
+    font-size: 18px; /* Slightly larger paragraph text */
+    max-width: 1200px; /* Limit how wide the paragraph can stretch */
+    line-height: 1.6; /* Increase space between lines for readability */
+}
+
+/* General container used below the banner */
+.container {
+    position: relative; /* Allows child absolute positioning */
+    z-index: 2; /* Stays above background elements */
+    width: 99%; /* Almost full width */
+    opacity: 0.9; /* Slight transparency */
+    height: 40%; /* Occupies 40% of the space */
+    padding: 15px; /* Inner spacing */
+    margin-top: 100px; /* Adds space above (likely under the fixed header) */
+    background-color: rgb(255, 255, 255); /* White background */
+}
+
+/* Container for step-by-step items (e.g., process flow) */
+.steps {
+    display: flex; /* Arrange step boxes side by side */
+    justify-content: center; /* Center the steps horizontally */
+    gap: 40px; /* Space between step elements */
+    margin-top: 20px; /* Space above the steps section */
+}
+
+/* Individual step item box */
+.step {
+    background-color: #e5d4ef; /* Light lavender background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    width: 250px; /* Fixed width for uniform size */
+    text-align: center; /* Center the text inside each step */
+}
+
+/* Step title */
+.step h3 {
+    font-size: 22px; /* Medium-large heading */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Step description text */
+.step p {
+    font-size: 16px; /* Standard readable paragraph size */
+}
+
+/* Section to showcase featured drugs visually */
+.featured-drugs {
+    padding: 50px; /* Inner spacing around content */
+    text-align: center; /* Center all text inside */
+    background-color: #f9f9f9; /* Light gray background for contrast */
+}
+
+/* Heading in featured drugs section */
+.featured-drugs h2 {
+    font-size: 36px; /* Big heading */
+    margin-bottom: 20px; /* Space below the title */
+    color: #9474af; /* Purple color for branding */
+}
+
+/* Container for drug items */
+.drug-list {
+    display: flex; /* Display items in a row */
+    justify-content: center; /* Center the items horizontally */
+    gap: 30px; /* Space between drugs */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Table layout for displaying diseases, centered in the page */
+.disease-table {
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px 0; /* Vertical space above and below */
+}
+/* Generic table styling */
+table {
+    width: 80%; /* Make the table take up 80% of the container */
+    border-collapse: collapse; /* Merge table borders into single lines */
+    margin: auto; /* Center the table horizontally */
+}
+
+/* Table header and cell styles */
+th, td {
+    padding: 12px; /* Add padding inside table cells */
+    border: 1px solid #ddd; /* Light gray border around cells */
+    text-align: center; /* Center-align text in cells */
+}
+
+/* Table header row styling */
+th {
+    background-color: #9474af; /* Purple background for headers */
+    color: white; /* White text for contrast */
+}
+
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even-numbered rows */
+}
+
+/* Box for each drug in the featured section */
+.drug-item {
+    background-color: white; /* White background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 250px; /* Fixed width for layout consistency */
+    text-align: center; /* Center content */
+}
+
+/* Image inside drug item box */
+.drug-item img {
+    max-width: 100%; /* Image should not overflow its container */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Title inside a drug box */
+.drug-item h3 {
+    font-size: 20px; /* Medium heading size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Description inside drug box */
+.drug-item p {
+    font-size: 16px; /* Standard paragraph size */
+}
+
+/* Shared layout for steps, diseases, and drug sections */
+.steps, .disease-list, .drug-list {
+    display: flex; /* Horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center all items */
+    gap: 20px; /* Space between items */
+}
+
+/* Shared card style for .step, .disease, and .drug items */
+.step, .disease, .drug {
+    background: white; /* White background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    width: 250px; /* Fixed width for consistency */
+    text-align: center; /* Center text and content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Drug image inside .drug box */
+.drug img {
+    width: 100%; /* Image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Styling for logout button */
+.logout_btn {
+    display: inline-block; /* Allows padding and layout styling */
+    text-decoration: none; /* Remove underline */
+    background-color: darkgray; /* Button background color */
+    color: black; /* Text color */
+    padding: 8px 15px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Cursor becomes a pointer on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect for logout button */
+.logout_btn:hover {
+    background-color: gray; /* Darker on hover */
+}
+
+/* Container for multiple action buttons like Edit/Delete */
+.actions-container {
+    display: flex; /* Horizontal layout */
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Space between action buttons */
+    margin: 20px 0; /* Vertical margin */
+}
+
+/* Action button like Edit, View, etc. */
+.action-btn {
+    display: inline-block; /* Allows block styling */
+    padding: 10px 15px; /* Spacing inside the button */
+    background-color: #9474af; /* Purple background */
+    color: white; /* White text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for action buttons */
+.action-btn:hover {
+    background-color: #6d4f8d; /* Darker purple on hover */
+}
+
+/* Grid layout for importer info forms or fields */
+.importer-grid {
+    display: grid; /* Use CSS grid layout */
+    grid-template-columns: auto auto; /* Two columns with auto width */
+    gap: 10px; /* Space between grid items */
+    background: white; /* Background color */
+    padding: 15px; /* Space inside the grid */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    max-width: 500px; /* Restrict width to 500px */
+    margin: 0 auto; /* Center grid horizontally */
+}
+
+/* Individual cells inside the grid */
+.importer-grid div {
+    padding: 10px; /* Inner padding in each cell */
+}
+
+/* Sidebar navigation panel */
+.sidebar {
+    position: fixed; /* Stick to screen edge */
+    left: 0; /* Align to left of the screen */
+    top: 10%; /* Start from 10% down the screen */
+    width: 200px; /* Set sidebar width */
+    background: white; /* Sidebar background */
+    padding: 20px; /* Space inside sidebar */
+    border-radius: 0 10px 10px 0; /* Rounded only right side */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Shadow on right */
+    display: flex; /* Flex layout for buttons */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+/* Buttons inside the sidebar */
+.sidebar-btn {
+    display: block; /* Full-width block button */
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text */
+    background: #9e7abd; /* Purple background */
+    padding: 12px; /* Space inside button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    font-size: 16px; /* Font size */
+}
+
+/* Hover effect for sidebar buttons */
+.sidebar-btn:hover {
+    background: #6a4d7e; /* Darker purple on hover */
+}
+
+/* Main page content beside the sidebar */
+.main-content {
+    margin-left: 220px; /* Leave space for the sidebar */
+    padding: 20px; /* Padding inside content area */
+}
+
+/* Footer section */
+footer {
+    background: linear-gradient(to right, #9474af, #e5d4ef); /* Gradient background */
+    color: white; /* White text */
+    text-align: left; /* Align text to the left */
+    padding: 15px; /* Inner spacing */
+    position: relative; /* Allow positioning if needed */
+    bottom: 0; /* Stick to bottom of content */
+    width: 100%; /* Full width */
+    margin-top: 50px; /* Space above the footer */
+}

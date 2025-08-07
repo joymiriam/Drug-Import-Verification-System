@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Registration</title>
+    <script src="validation.js" defer></script>
+<style>
+    /* Apply basic resets and set a global font */
+    * {
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        box-sizing: border-box; /* Include padding and border in element's total width/height */
+        font-family: Arial, sans-serif; /* Set global font */
+    }
+
+    /* Style the body with background image and center the content */
+    body {
+        background-image: url('images/gradient.jpg'); /* Set the background image */
+        background-size: 100%; /* Scale background to full width */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-attachment: fixed; /* Keep the background fixed during scroll */
+        display: flex; /* Use flexbox for centering content */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        height: 100vh; /* Full viewport height */
+    }
+
+    /* Container for the form */
+    .form-container {
+        background: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+        opacity: 0.9; /* Overall container transparency */
+        padding: 30px; /* Inner spacing */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+        width: 850px; /* Fixed width */
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Heading style */
+    h1 {
+        margin-bottom: 20px; /* Space below heading */
+        font-size: 24px; /* Font size */
+        color: #5a3e8b; /* Dark purple color */
+    }
+
+    /* Style for all form labels */
+    label {
+        display: block; /* Each label on a new line */
+        text-align: left; /* Align text to the left */
+        margin: 10px 0 5px; /* Top, horizontal, and bottom margins */
+        font-weight: bold; /* Bold text */
+        color: #333; /* Dark gray color */
+    }
+
+    /* Style for input fields and dropdowns */
+    input, select {
+        width: 100%; /* Full width */
+        padding: 10px; /* Inner spacing */
+        margin-bottom: 15px; /* Space below each field */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+    }
+
+    /* Style for the submit button */
+    button {
+        background-color: #7551b2; /* Purple background */
+        color: white; /* White text */
+        border: none; /* No border */
+        padding: 12px; /* Inner spacing */
+        font-size: 16px; /* Font size */
+        border-radius: 5px; /* Rounded corners */
+        transition: 0.3s ease; /* Smooth transition effect */
+        cursor: pointer; /* Pointer cursor on hover */
+        width: 100%; /* Full width button */
+    }
+
+    /* Change button color on hover */
+    button:hover {
+        background-color: #583f84; /* Darker purple when hovered */
+    }
+</style>
+
+</head>
+<body style="background-color: lavender;"> 
+    <div class="form-container">
+        <h1 style="font-family: Verdana;">User Registration</h1>
+        <form id="UsersForm" action="users.php" method="POST">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" >
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" >
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" >
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" >
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="">Select Role</option>
+                <option value="importer">Importer</option>
+                <option value="ppb">PPB Official</option>
+                <option value="Customs">Customs Official</option>
+            </select>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

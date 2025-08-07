@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script src="validation.js" defer></script>
+    <style>
+        /* Reset default styles and set base font */
+        * {
+            margin: 0;                        /* Remove default margin */
+            padding: 0;                       /* Remove default padding */
+            box-sizing: border-box;          /* Include padding and border in element's total width and height */
+            font-family: Arial, sans-serif;  /* Set default font for all elements */
+        }
+
+        /* Body style to center form and apply background */
+        body {
+            background-image: url('images/gradient.jpg');  /* Set background image */
+            background-size: 100%;                         /* Scale image to full width */
+            background-position: center;                   /* Center the background image */
+            background-repeat: no-repeat;                  /* Prevent background repetition */
+            background-attachment: fixed;                  /* Keep background fixed on scroll */
+            display: flex;                                 /* Use flex layout to center content */
+            justify-content: center;                       /* Horizontally center the form */
+            align-items: center;                           /* Vertically center the form */
+            height: 100vh;                                 /* Full height of viewport */
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);           /* White background with transparency */
+            opacity: 0.9;                                   /* Slight transparency */
+            padding: 30px;                                  /* Inner spacing */
+            border-radius: 10px;                            /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);        /* Subtle drop shadow */
+            width: 850px;                                   /* Fixed width */
+            text-align: left;                               /* Align text to the left */
+        }
+
+        /* Heading inside the form */
+        h1 {
+            margin-bottom: 20px;                            /* Space below heading */
+            font-size: 24px;                                /* Font size of heading */
+            color: #5a3e8b;                                 /* Purple color for heading */
+        }
+
+        /* Style labels for input fields */
+        label {
+            display: block;                                 /* Ensure labels take full width */
+            text-align: left;                               /* Left-align label text */
+            margin: 10px 0 5px;                             /* Top, right/left, bottom margin */
+            font-weight: bold;                              /* Make label text bold */
+            color: #333;                                    /* Dark gray color */
+        }
+
+        /* Style input fields and dropdowns */
+        input,
+        select {
+            width: 100%;                                    /* Take full width of container */
+            padding: 10px;                                  /* Space inside the field */
+            margin-bottom: 15px;                            /* Space below each field */
+            border: 1px solid #ccc;                         /* Light gray border */
+            border-radius: 5px;                             /* Slightly rounded corners */
+            font-size: 16px;                                /* Increase text size */
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            background-color: #7551b2;                      /* Purple background */
+            color: white;                                   /* White text */
+            border: none;                                   /* No border */
+            padding: 12px;                                  /* Space inside button */
+            font-size: 16px;                                /* Text size */
+            border-radius: 5px;                             /* Rounded corners */
+            transition: 0.3s ease;                          /* Smooth hover effect */
+        }
+
+        /* Hover effect for the submit button */
+        input[type="submit"]:hover {
+            background-color: #583f84;                      /* Darker purple on hover */
+        }
+
+        /* General style for buttons */
+        button {
+            background-color: #7551b2;                      /* Purple background */
+            color: white;                                   /* White text */
+            border: none;                                   /* No border */
+            padding: 12px;                                  /* Button padding */
+            font-size: 16px;                                /* Text size */
+            border-radius: 5px;                             /* Rounded corners */
+            transition: 0.3s ease;                          /* Smooth hover effect */
+        }
+
+        /* Hover effect for all buttons */
+        button:hover {
+            background-color: #583f84;                      /* Darker shade on hover */
+        }
+    </style>
+</head>
+
+<body style="background-color: lavender;">
+    <div class="login-container">
+        <h1 style="font-family: Verdana;">Login</h1>
+        <form id="loginForm" action="login.php" method="post">
+            <label for="Loginusername">USERNAME:</label><br>
+            <input type="text" id="Loginusername" name="Loginusername"><br><br>
+
+            <label for="loginPassword">PASSWORD:</label><br>
+            <input type="password" id="loginPassword" name="loginPassword"><br><br>
+
+            <label for="role">ROLE:</label><br>
+            <select id="role" name="role">
+                <option value="">Select Role</option>
+                <option value="importer">Importer</option>
+                <option value="ppb">PPB Official</option>
+                <option value="Customs">Customs Official</option>
+                <option value="admin">Admin</option>
+            </select>
+            <br><br>
+
+             <!-- CAPTCHA Section -->
+        <p id="captchaQuestion"></p>
+        <input type="text" id="captchaAnswer" placeholder="Enter answer" required><br>
+
+        <p id="captchaError" style="color: red;"></p>
+
+            <input type="submit" value="Login">
+            <button type="button" onclick="window.location.href='forgot_password.php'">Forgot Password</button>
+        </form>
+    </div>
+</body>
+</html>

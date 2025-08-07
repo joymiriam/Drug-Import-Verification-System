@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document Verification</title>
+    <script src="validation.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+   <style>
+    /* Reset margins and paddings for all elements and apply default font */
+    * {
+        margin: 0;                          /* Remove default margin */
+        padding: 0;                         /* Remove default padding */
+        box-sizing: border-box;            /* Include padding and border in total element width/height */
+        font-family: Arial, sans-serif;    /* Set a universal font */
+    }
+
+    /* Body styling with full background image */
+    body {
+        background-image: url('images/gradient.jpg'); /* Apply background image */
+        background-size: 100%;                        /* Stretch image to cover width */
+        background-position: center;                  /* Center the background */
+        background-repeat: no-repeat;                 /* Prevent image repetition */
+        background-attachment: fixed;                 /* Keep background fixed during scroll */
+        min-height: 100vh;                            /* Set minimum height to full viewport */
+    }
+
+    /* Header bar styling */
+    header {
+        background-color: rgba(90, 62, 139, 0.9);      /* Semi-transparent purple background */
+        color: white;                                 /* White text color */
+        padding: 20px;                                /* Inner spacing */
+        text-align: center;                           /* Center text horizontally */
+        position: relative;                           /* Make child absolute positioning relative to header */
+        z-index: 10;                                  /* Ensure header stays above other elements */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);      /* Add subtle shadow under header */
+    }
+
+    /* Back button positioned inside the header */
+    .btn-back {
+        position: absolute;               /* Position button within header */
+        right: 20px;                      /* Place it 20px from the right */
+        top: 20px;                        /* Place it 20px from the top */
+        background-color: #555;           /* Dark grey background */
+        color: white;                     /* White text */
+        padding: 10px 20px;               /* Vertical and horizontal padding */
+        border-radius: 5px;               /* Rounded corners */
+        text-decoration: none;            /* Remove underline from text */
+    }
+
+    /* Container for the form */
+    .form-container {
+        background: rgba(255, 255, 255, 0.95);          /* White with slight transparency */
+        margin: 60px auto;                              /* Top margin and center horizontally */
+        padding: 30px;                                  /* Inner spacing */
+        border-radius: 10px;                            /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);        /* Drop shadow for depth */
+        width: 850px;                                   /* Set form width */
+        text-align: left;                               /* Align form elements to the left */
+    }
+
+    /* Main heading */
+    h1 {
+        font-family: Verdana;   /* Use Verdana for a distinct look */
+        color: #f0f0f0;         /* Very light gray color */
+        margin-bottom: 20px;    /* Space below heading */
+    }
+
+    /* Subheading */
+    h2 {
+        font-family: Verdana;   /* Same font as main heading */
+        color: #5a3e8b;         /* Deep purple */
+        margin-bottom: 20px;    /* Bottom spacing */
+    }
+
+    /* Labels for form fields */
+    label {
+        display: block;             /* Make label occupy full line */
+        margin: 10px 0 5px;         /* Spacing above and below label */
+        font-weight: bold;          /* Bold text for emphasis */
+        color: #333;                /* Dark grey text */
+    }
+
+    /* Input and select field styling */
+    input, select {
+        width: 100%;                /* Full width fields */
+        padding: 10px;              /* Inner spacing */
+        margin-bottom: 15px;        /* Space below each input */
+        border: 1px solid #ccc;     /* Light grey border */
+        border-radius: 5px;         /* Rounded corners */
+        font-size: 16px;            /* Standard readable size */
+    }
+
+    /* Button style for form submission */
+    button {
+        background-color: #7551b2;  /* Purple background */
+        color: white;               /* White text */
+        border: none;               /* Remove border */
+        padding: 12px;              /* Inner spacing */
+        font-size: 16px;            /* Font size */
+        border-radius: 5px;         /* Rounded corners */
+        transition: 0.3s ease;      /* Smooth hover transition */
+        width: 100%;                /* Full width button */
+    }
+
+    /* Hover effect for the submit button */
+    button:hover {
+        background-color: #583f84;  /* Darker purple on hover */
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Document Submission Form</h1>
+        <a href="importer_dashboard.php" class="btn-back">Back to Dashboard</a>
+    </header>
+    <div class="form-container">
+        <h2>Document Submission Form</h2>
+        <form id="documentSubmissionForm" action="documents.php" method="post" enctype="multipart/form-data">
+            <!-- enctype="multipart/form-data" is required for file uploads -->
+            <!-- It ensures that files are properly encoded and transmitted to the server -->
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="">Select Category</option>
+                <option value="manufacturer">Manufacturer</option>
+                <option value="importer">Importer</option>
+                <option value="drugs">Drugs</option>
+                <option value="customs">Customs</option>
+            </select>
+
+            <label for="type">Document Type:</label>
+            <select id="type" name="type">
+                <option value="">Select Document Type</option>
+                <option value="import_license">Import License</option>
+                <option value="wholesaler_license">Wholesaler Dealer's License</option>
+                <option value="certificate_premise">Certificate of Premise</option>
+                <option value="drug_sample_permit">Drug Sample Permit</option>
+                <option value="gmp_certificate">Good Manufacturing Practices Certificate</option>
+                <option value="product_registration">Product Registration Certificate</option>
+                <option value="radio_analysis">Certificate of Radio Analysis</option>
+                <option value="import_declaration">Import Declaration Form</option>
+                <option value="commercial_medicines_permit">Commercial Medicines Import Permit</option>
+                <option value="certificate_conformity">Certificate of Conformity</option>
+                <option value="import_standardization">Import Standardization Mark Permit</option>
+            </select>
+
+            <label for="identification_number">Identification Number:</label>
+            <input type="text" id="identification_number" name="identification_number">
+
+            <label for="path">Upload Document in PDF format:</label>
+            <!-- Only PDF files are allowed to ensure document consistency and prevent malicious uploads -->
+            <input type="file" id="path" name="path" accept=".pdf">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

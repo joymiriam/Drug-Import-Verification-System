@@ -1,0 +1,158 @@
+<!DOCTYPE html> <!-- Declares the document type and version of HTML used -->
+<html lang="en"> <!-- Opens the HTML document and sets the language to English -->
+<head>
+    <title>Dashboard</title> <!-- Sets the title of the webpage shown on the browser tab -->
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body> <!-- Begins the body of the HTML document -->
+
+    <!-- Header section containing the logo and authentication links -->
+    <header>
+        <div class="logo">PharmaSure</div>
+
+        <div class="auth-links"> 
+            <a href="login.html">Login</a> <!-- Link to the login page -->
+            <a href="users.html">Sign in</a> <!-- Link to the user registration page -->
+        </div>
+    </header>
+
+    <!-- Banner section with a welcome message and an About Us introduction -->
+    <section class="banner">
+        <div class="banner-content"> <!-- Container for the banner text -->
+            <h1>Welcome to PharmaSure</h1>
+            <p>Your trusted platform for verifying imported pharmaceutical drugs.</p><br> 
+            <h2>About Us</h2> 
+            <p>At PharmaSure, we are committed to safeguarding public health by ensuring that only authorized pharmaceuticals enter the country through verified importers. 
+              Our platform is designed to provide a secure, centralized system where regulatory authorities can efficiently review, approve, and track drug shipments. </p>
+        </div>
+    </section>
+
+    <!-- Section for common diseases and their treatments -->
+    <section id="common-diseases">
+        <!-- Container for layout styling -->
+        <div class="container"> 
+            <h2>Common Diseases & Treatments</h2>
+            <!-- Table to display diseases, symptoms, and treatments -->
+            <table class="disease-table"> 
+                <tr>
+                    <th>Disease</th> 
+                    <th>Symptoms</th>
+                    <th>Treatment</th> 
+                </tr>
+                
+                <tr>
+                    <td>Malaria</td>
+                    <td>Fever, chills, nausea, headaches</td>
+                    <td>Artemisinin-based combination therapy (ACT), including drugs such as Artesunate-Amodiaquine. Early treatment is crucial to prevent complications</td>
+                </tr>
+                <tr>
+                    <td>Diabetes</td>
+                    <td>Frequent urination, increased thirst, weight loss</td>
+                    <td> Management includes lifestyle changes, insulin therapy, and oral medications. Regular monitoring of blood sugar levels is essential.</td>
+                </tr>
+                <tr>
+                    <td>Hypertension</td>
+                    <td>High blood pressure, headaches, dizziness</td>
+                    <td>Medications include ACE inhibitors, Beta-blockers, and Calcium channel blockers. Lifestyle changes such as a low-sodium diet and regular exercise are recommended.</td>
+                </tr>
+                <tr>
+                    <td>Asthma</td>
+                    <td>Shortness of breath, wheezing, chest tightness</td>
+                    <td>Long-term control medications such as corticosteroid inhalers and quick-relief inhalers help manage symptoms. Avoiding triggers is also crucial.</td>
+                </tr>
+                <tr>
+                    <td>Influenza</td>
+                    <td>Fever, cough, sore throat, muscle aches</td>
+                    <td>Antiviral medications such as Oseltamivir and Zanamivir can reduce symptoms and duration. Rest, hydration, and over-the-counter fever reducers help alleviate discomfort</td>
+                </tr>
+                <tr>
+                    <td>COVID-19</td>
+                    <td>Fever, cough, difficulty breathing, loss of taste or smell</td>
+                    <td>Supportive care includes oxygen therapy and fever management. Antiviral drugs such as Remdesivir are used for severe cases. Vaccination remains the best preventive measure.</td>
+                </tr>
+                <tr>
+                    <td>Tuberculosis</td>
+                    <td>Persistent cough, night sweats, weight loss</td>
+                    <td>A combination of antibiotics taken for at least six months. Completing the full course is essential to prevent drug resistance</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section listing banned drugs and reasons why drugs get banned in Kenya -->
+    <section id="banned-drugs">
+        <div class="container">
+            <h2>Banned Drugs in Kenya</h2>
+            <p>
+                The Pharmacy and Poisons Board (PPB) is the national authority in Kenya responsible for regulating medicines and ensuring they are safe, effective, and of good quality. Sometimes, certain drugs are found to be harmful or no longer meet safety standards. When that happens, they are either suspended, withdrawn, or banned from the market.
+            </p>
+            <h3>Why are drugs banned?</h3> <!-- Subsection heading -->
+            <p>
+                Drugs may be banned in Kenya for several reasons, including:
+            </p>
+            <ul> <!-- Unordered list of reasons -->
+                <li>Serious side effects or long-term health risks</li>
+                <li>No proven medical benefit</li>
+                <li>Potential for misuse or addiction</li>
+                <li>Substandard or counterfeit ingredients</li>
+                <li>Global safety alerts from WHO or other health agencies</li>
+            </ul>
+            <p>
+                Once a drug is banned, it is illegal to import, sell, distribute, or use it in Kenya. All importers, pharmacists, and healthcare professionals are expected to stay updated with the latest information from the PPB to ensure compliance and protect public health.
+            </p>
+            <p>
+                <strong>To view the official list of suspended, withdrawn, or revoked drugs, visit the PPB website below:</strong>
+            </p>
+            <a href="https://products.pharmacyboardkenya.org/ppb_admin/pages/public_view_ectd_red.php" target="_blank" style=" font-weight: bold;">
+                View Suspended, Withdrawn or Revoked Products on the PPB Website
+            </a> <!-- External link to PPB page with banned products -->
+        </div>
+    </section>
+
+    <!-- Section showcasing featured drugs with image and manufacturer details -->
+    <section id="featured-drugs">
+        <div class="container">
+            <h2>Featured Drugs</h2>
+            <!-- Container for the list of featured drugs -->
+            <div class="drug-list"> 
+                <!-- Each drug is displayed with an image and manufacturer info -->
+                <div class="drug">
+                    <img src="images/paracetamol.png" alt="Paracetamol">
+                    <h3>Paracetamol</h3>
+                    <p><strong>Manufacturer:</strong> HAB pharmaceutical & research limited</p>
+                </div>
+                <div class="drug">
+                    <img src="images/AMOXICILLIN.png" alt="Amoxicillin">
+                    <h3>Amoxicillin</h3>
+                    <p><strong>Manufacturer:</strong> Delta Pharma limited</p>
+                </div>
+                <div class="drug">
+                    <img src="images/azithromycin.jpeg" alt="Azithromycin">
+                    <h3>Azithromycin</h3>
+                    <p><strong>Manufacturer:</strong> Stanford laboratories PVT LTD</p>
+                </div>
+                <div class="drug">
+                    <img src="images/ibuprophen.png" alt="Ibuprofen">
+                    <h3>Ibuprofen</h3>
+                    <p><strong>Manufacturer:</strong> SHIJIAZHUANG NO.4 PHARMACEUTICAL CO., LTD</p>
+                </div>
+                <div class="drug">
+                    <img src="images/omeprazole.png" alt="Omeprazole">
+                    <h3>Omeprazole</h3>
+                    <p><strong>Manufacturer:</strong> Glenmark Pharmaceuticals Limited, GOA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section with contact information -->
+    <footer>
+        <h2>Contact Us</h2> 
+        <p>Email: support@pharmasure.com</p> 
+        <p>Phone: +123 456 789</p> 
+        <p>&copy; 2025 PharmaSure. All rights reserved.</p> 
+    </footer>
+
+</body>
+<!-- Closes the HTML document -->
+ </html> 
